@@ -1,6 +1,0 @@
-mkdir -p /cyworld/ems/agent
-cd /cyworld/ems/agent/
-rsync -av 10.42.100.250::PATCH/NNPAgent_SMS_Linux64_3.4_7.6.2_6.tar.gz ./
-tar zxvf NNPAgent_SMS_Linux64_3.4_7.6.2_6.tar.gz
-./AgentInstall.sh -t 2
-ps -ef | grep AG

@@ -1,2 +1,0 @@
-# Clear garbage live notice in timeline
-*/5 * * * * /usr/bin/wget --spider "http://www.airelive.com/api/movie/liveapi/liveTimelineClear.json?term=30" 2> /dev/null

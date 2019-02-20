@@ -1,3 +1,0 @@
-https://archive.cloudera.com/spark/parcels/latest/
-
-https://archive.cloudera.com/spark/parcels/{latest_supported}/
