@@ -1,0 +1,37 @@
+PowerEdge R740/R740XD Motherboard
+Intel Xeon Gold 5118 2.3G, 12C/24T, 10.4GT/s , 16M Cache, Turbo, HT (105W) DDR4-2400
+Intel Xeon Gold 5118 2.3G, 12C/24T, 10.4GT/s , 16M Cache, Turbo, HT (105W) DDR4-2400
+Chassis with up to 8 x 2.5" SAS/SATA Hard Drives for 2CPU Configuration
+PowerEdge 2U Standard Bezel
+Riser Config 5, 6 x8, 2 x16 slots
+PowerEdge R740 Shipping Material
+Dell EMC Luggage Tag
+No Quick Sync
+2666MT/s RDIMMs
+Performance Optimized
+32GB RDIMM 2666MT/s Dual Rank
+iDRAC9,Enterprise
+200GB SSD SATA Mix Use 6Gbps 512n 2.5in Hot-plug Drive, Hawk-M4E,3 DWPD,1095 TBW
+480GB SSD SATA Mix Use 6Gbps 512n 2.5in Hot-plug Drive, SM863a,3 DWPD,2628 TBW
+PERC H730P+ RAID Controller, 2GB NV Cache, Adapter, Low Profile
+Standard 1U Heatsink
+No Internal Optical Drive
+Dual, Hot-plug, Redundant Power Supply (1+1), 750W
+Jumper Cord, 10A,4M,C13/C14 (China, Hong Kong, Korea)
+Deskside Power Cord, 220V,2M (Korea)
+No Trusted Platform Module
+Broadcom 5720 QP 1Gb Network Daughter Card
+No Operating System
+Power Saving Dell Active Power Controller
+ReadyRails Sliding Rails With Cable Management Arm
+Unconfigured RAID
+OME Server Configuration Management
+Software
+6 Standard Fans for R740/740XD
+No Systems Documentation, No OpenManage DVD Kit
+Service
+Limited Warranty:Yr1-3 (Labor)
+Limited Warranty:Yr1-3 (Parts)
+3Yr ProSupport & Mission Critical: (7x24) 4-hour Onsite Service
+Yr1-3 Mission Critical:(7x24) 4-hour Onsite Service
+3Yr ProSupport & Mission Critical:(7x24) Technical Support & Assistance

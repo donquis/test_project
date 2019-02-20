@@ -1,0 +1,163 @@
+>> uajjang - Main# info/slb/dump 
+Real server state:
+  31: 121.156.73.31, d2:5e:6f:67:fa:bd, vlan 10, port 4, health 4, up
+  32: 121.156.73.32, 76:b4:a0:b2:e3:00, vlan 10, port 4, health 4, up
+  33: 121.156.73.33, 3a:8c:96:28:ad:d2, vlan 10, port 4, health 4, up
+  34: 121.156.73.34, 0e:46:2d:d3:e1:57, vlan 10, port 4, health 4, up
+  39: 121.156.73.39, 2a:91:d3:c1:13:f8, vlan 10, port 4, health 4, up
+  40: 121.156.73.40, 8e:2f:ab:39:6d:5a, vlan 10, port 4, health 4, up
+  41: 121.156.73.41, 2e:84:63:32:68:38, vlan 10, port 4, health 4, up
+  42: 121.156.73.42, ea:32:87:4f:ca:9a, vlan 10, port 4, health 4, up
+ 115: 121.156.73.115, 84:2b:2b:60:e8:9e, vlan 10, port 4, health 4, up
+ 116: 121.156.73.116, 00:25:90:32:63:7b, vlan 10, port 6, health 4, up
+ 117: 121.156.73.117, 00:25:90:63:45:b5, vlan 10, port 6, health 4, up
+ 181: 121.156.73.181, 00:25:90:6a:26:b9, vlan 10, port 6, health 4, up
+ 182: 121.156.73.182, 00:16:35:5a:cd:d5, vlan 10, port 2, health 4, up
+ 183: 121.156.73.183, 84:2b:2b:60:e7:cd, vlan 10, port 7, health 4, up
+ 186: 121.156.73.186, 00:19:b9:e5:ce:6b, vlan 10, port 3, health 4, up
+ 232: 121.156.73.232, 00:19:b9:f4:02:38, vlan 10, port 3, health 4, up
+
+Virtual server state:
+  19: 121.156.73.19,   00:0e:62:f5:84:0e
+    virtual ports:
+    http: rport http, group 19, origin.dvod.airelive.com, backup none
+        real servers:                     
+         183: 121.156.73.183, backup none, 107 ms, group ena, up
+  20: 121.156.73.20,   00:0e:62:f5:84:0e
+    virtual ports:
+    http: rport http, group 20, origin.dvod.airelive.com, backup none
+        real servers:
+         181: 121.156.73.181, backup none, 107 ms, group ena, up
+         182: 121.156.73.182, backup none, 26 ms, group ena, up
+    https: rport https, group 20, origin.dvod.airelive.com, backup none
+        real servers:
+         181: 121.156.73.181, backup none, 106 ms, group ena, up
+         182: 121.156.73.182, backup none, 26 ms, group ena, up
+  21: 121.156.73.21,   00:0e:62:f5:84:0e
+    virtual ports:
+    http: rport http, group 21, origin.image.airelive.com, backup none
+        real servers:
+         181: 121.156.73.181, backup none, 107 ms, group ena, up
+         182: 121.156.73.182, backup none, 26 ms, group ena, up
+         183: 121.156.73.183, backup none, 107 ms, group ena, up
+         186: 121.156.73.186, backup none, 26 ms, group ena, up
+         188: 121.156.73.188, backup none, 1530310 ms, group ena, DISABLED
+  22: 121.156.73.22,   00:0e:62:f5:84:0e, NO SERVICES UP
+    virtual ports:
+    http: rport http, group 22, starms.airelive.com, backup none
+        real servers:
+         111: 121.156.73.111, backup none, 105 ms, group ena, DISABLED
+         112: 121.156.73.112, backup none, 25 ms, group ena, DISABLED
+  28: 121.156.73.28,   00:0e:62:f5:84:0e, NO SERVICES UP
+    virtual ports:
+    http: rport http, group 28, address.jjanglive.com, backup none
+        real servers:
+         105: 121.156.73.105, backup none, 0 ms, group ena, DISABLED
+         106: 121.156.73.106, backup none, 0 ms, group ena, DISABLED
+    https: rport https, group 228, backup none
+        real servers:
+         105: 121.156.73.105, backup none, 0 ms, group ena, DISABLED
+         106: 121.156.73.106, backup none, 0 ms, group ena, DISABLED
+  35: 121.156.73.35,   00:0e:62:f5:84:0e
+    virtual ports:
+    http: rport http, group 35, backup none
+        real servers:
+         232: 121.156.73.232, backup none, 26 ms, group ena, up
+  36: 121.156.73.36,   00:0e:62:f5:84:0e
+    virtual ports:
+    http: rport http, group 36, www.airelive.com, backup none
+        real servers:
+          31: 121.156.73.31, backup none, 24 ms, group ena, up
+          32: 121.156.73.32, backup none, 15 ms, group ena, up
+          33: 121.156.73.33, backup none, 104 ms, group ena, up
+          34: 121.156.73.34, backup none, 23 ms, group ena, up
+          37: 121.156.73.37, backup none, 0 ms, group ena, DISABLED
+          38: 121.156.73.38, backup none, 0 ms, group ena, DISABLED
+          39: 121.156.73.39, backup none, 104 ms, group ena, up
+          40: 121.156.73.40, backup none, 24 ms, group ena, up
+          41: 121.156.73.41, backup none, 104 ms, group ena, up
+          42: 121.156.73.42, backup none, 24 ms, group ena, up
+         114: 121.156.73.114, backup none, 523698 ms, group ena, DISABLED
+         115: 121.156.73.115, backup none, 105 ms, group ena, up
+         116: 121.156.73.116, backup none, 26 ms, group ena, up
+         117: 121.156.73.117, backup none, 105 ms, group ena, up
+         118: 121.156.73.118, backup none, 26 ms, group ena, DISABLED
+    https: rport https, group 36, www.airelive.com, backup none
+        real servers:
+          31: 121.156.73.31, backup none, 2 ms, group ena, up
+          32: 121.156.73.32, backup none, 2 ms, group ena, up
+          33: 121.156.73.33, backup none, 102 ms, group ena, up
+          34: 121.156.73.34, backup none, 22 ms, group ena, up
+          37: 121.156.73.37, backup none, 0 ms, group ena, DISABLED
+          38: 121.156.73.38, backup none, 0 ms, group ena, DISABLED
+          39: 121.156.73.39, backup none, 104 ms, group ena, up
+          40: 121.156.73.40, backup none, 23 ms, group ena, up
+          41: 121.156.73.41, backup none, 104 ms, group ena, up
+          42: 121.156.73.42, backup none, 24 ms, group ena, up
+         114: 121.156.73.114, backup none, 523698 ms, group ena, DISABLED
+         115: 121.156.73.115, backup none, 105 ms, group ena, up
+         116: 121.156.73.116, backup none, 24 ms, group ena, up
+         117: 121.156.73.117, backup none, 105 ms, group ena, up
+         118: 121.156.73.118, backup none, 26 ms, group ena, DISABLED
+  47: 121.156.73.47,   00:0e:62:f5:84:0e
+    virtual ports:
+    http: rport http, group 47, sns.airelive.com, backup none
+        real servers:
+          31: 121.156.73.31, backup none, 2 ms, group ena, up
+          32: 121.156.73.32, backup none, 2 ms, group ena, up
+          33: 121.156.73.33, backup none, 102 ms, group ena, up
+          34: 121.156.73.34, backup none, 22 ms, group ena, up
+          37: 121.156.73.37, backup none, 0 ms, group ena, DISABLED
+          38: 121.156.73.38, backup none, 0 ms, group ena, DISABLED
+          39: 121.156.73.39, backup none, 104 ms, group ena, up
+          40: 121.156.73.40, backup none, 24 ms, group ena, up
+          41: 121.156.73.41, backup none, 104 ms, group ena, up
+          42: 121.156.73.42, backup none, 24 ms, group ena, up
+         114: 121.156.73.114, backup none, 523698 ms, group ena, DISABLED
+         115: 121.156.73.115, backup none, 105 ms, group ena, up
+         116: 121.156.73.116, backup none, 25 ms, group ena, up
+         117: 121.156.73.117, backup none, 105 ms, group ena, up
+         118: 121.156.73.118, backup none, 26 ms, group ena, DISABLED
+         120: 121.156.73.120, backup none, 0 ms, group ena, DISABLED
+         121: 121.156.73.121, backup none, 0 ms, group ena, DISABLED
+  48: 121.156.73.48,   00:0e:62:f5:84:0e
+    virtual ports:
+    http: rport http, group 48, address.airelive.com, backup none
+        real servers:
+          31: 121.156.73.31, backup none, 2 ms, group ena, up
+          32: 121.156.73.32, backup none, 2 ms, group ena, up
+          33: 121.156.73.33, backup none, 103 ms, group ena, up
+          34: 121.156.73.34, backup none, 23 ms, group ena, up
+          37: 121.156.73.37, backup none, 0 ms, group ena, DISABLED
+          38: 121.156.73.38, backup none, 0 ms, group ena, DISABLED
+          39: 121.156.73.39, backup none, 104 ms, group ena, up
+          40: 121.156.73.40, backup none, 24 ms, group ena, up
+          41: 121.156.73.41, backup none, 104 ms, group ena, up
+          42: 121.156.73.42, backup none, 24 ms, group ena, up
+         114: 121.156.73.114, backup none, 523698 ms, group ena, DISABLED
+         115: 121.156.73.115, backup none, 105 ms, group ena, up
+         116: 121.156.73.116, backup none, 25 ms, group ena, up
+         117: 121.156.73.117, backup none, 105 ms, group ena, up
+         118: 121.156.73.118, backup none, 26 ms, group ena, DISABLED
+         120: 121.156.73.120, backup none, 0 ms, group ena, DISABLED
+         121: 121.156.73.121, backup none, 0 ms, group ena, DISABLED
+
+IDS group state:
+
+Redirect filter state:
+
+Port state:
+  1:     client, server
+  2:     client, server
+  3:     client, server
+  4:     client, server
+  5:     client, server
+  6:     client, server
+  7:     client, server                   
+  8:     client, server
+  9:     client, server
+ 10:     client, server
+ 11:     client, server
+ 12:     client, server
+
+PIP State: port based

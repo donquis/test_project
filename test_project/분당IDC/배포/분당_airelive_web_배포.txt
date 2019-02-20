@@ -1,0 +1,124 @@
+패스워드 종류
+jjang1234
+Tk2dnjfem
+uabest0919
+administrator // uaWkd09(Tk2dnjfem)
+
+
+L4 접속계정 : donquis//Tkdl@42
+alteon01 121.156.73.1
+alteon02 121.156.116.70
+
+
+wwwstage 
+IP : 10.6.0.205
+계정 : root // Tkdldnjfem1!
+
+su - www
+cd /syncmaster_airelive
+airelive_www.sh
+airelive_www01.sh       15 16 17
+airelive_www02.sh       24 25 29 30 33 34 35
+
+
+프로세스 시작 종료
+stopt
+startt
+
+
+
+########## 참 고 ###########
+/stats/slb/group 35
+
+nslookup www.airelive.com
+이름:    www.airelive.com
+Address:  121.156.73.36
+##########################
+
+
+1번
+
+========================= 현재 사용중 ===========================================================
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.115::airelive/www/
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.116::airelive/www/
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.117::airelive/www/
+=============================================================================================
+
+========================= 현재 사용용도? ============================================
+#/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.111::airelive/www/
+#/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.112::airelive/www/
+#/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.113::airelive/www/
+#/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.114::airelive/www/  121.156.73.114
+#/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.118::airelive/www/
+================================================================================
+
+
+
+
+2번
+
+================== 현재 사용용도? ====================================================
+#/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.116::airelive/www/
+#/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.117::airelive/www/
+#/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.118::airelive/www/
+#/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.131::airelive/www/
+#/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.132::airelive/www/
+=================================================================================
+
+
+================ 현재 사용중 =====================================================================
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.124::airelive/www/  121.156.73.31
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.125::airelive/www/  121.156.73.32
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.129::airelive/www/  121.156.73.33
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.130::airelive/www/  121.156.73.34
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.133::airelive/www/  121.156.73.39
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.134::airelive/www/  121.156.73.40
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.135::airelive/www/  121.156.73.41
+/usr/bin/rsync -av --delete /DATA/airelive/www/ROOT 10.6.0.136::airelive/www/  121.156.73.42
+==============================================================================================
+
+
+L4 설정법
+
+www01 배포
+alteon01
+
+
+/cfg/slb/r 41/dis
+/cfg/slb/r 42/dis
+/cfg/slb/r 115/dis
+/cfg/slb/r 116/dis
+/cfg/slb/r 117/dis
+apply
+
+/cfg/slb/r 41/en
+/cfg/slb/r 42/en
+/cfg/slb/r 115/en
+/cfg/slb/r 116/en
+/cfg/slb/r 117/en
+apply
+
+
+www02 배포
+alteon01
+/cfg/slb/r 31/dis
+/cfg/slb/r 32/dis
+/cfg/slb/r 33/dis
+/cfg/slb/r 34/dis
+/cfg/slb/r 39/dis
+/cfg/slb/r 40/dis
+apply
+
+/cfg/slb/r 31/en
+/cfg/slb/r 32/en
+/cfg/slb/r 33/en
+/cfg/slb/r 34/en
+/cfg/slb/r 39/en
+/cfg/slb/r 40/en
+apply
+
+
+
+
+
+

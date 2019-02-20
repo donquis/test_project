@@ -1,0 +1,67 @@
+UPLOAD01 Server
+
+#!/bin/bash
+
+# time
+FN=`date +%Y`
+FN1=`date +%m`
+FN2=`date +%d`
+FN3=`date +%H`
+FN4=`date +%M`
+
+# www.airelive.com Web Server
+
+echo "[ $FN/$FN1/$FN2/$FN3/$FN4 ]"
+echo "[backup Last Service Version]"
+/usr/bin/rsync -av --delete /DATA/airelive/uploader /DATA/source_backup/uploader
+echo "[sync qc to stage]"
+/usr/bin/rsync -av --delete --exclude-from=/home/www/syncmaster_airelive/bin/exclude_sync.txt 10.6.0.128::se/DATA/airelive/uploader/ /DATA/airelive/uploader/
+#echo "[sync test to stage]"
+#/usr/bin/rsync -av --delete --exclude-from=/home/www/qc_syncmaster/bin/exclude_sync.txt 10.6.0.204::se/DATA/airelive/uploader/ /DATA/airelive/uploader/
+echo "[sync stage to live]"
+/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.91::airelive/uploader/
+#/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.92::airelive/uploader/
+#/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.93::airelive/uploader/
+#/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.94::airelive/uploader/
+echo "-----------------------------------------------------------------------------"
+echo ""
+
+
+
+
+
+
+
+UPLOAD02 Server
+#!/bin/bash
+
+# time
+FN=`date +%Y`
+FN1=`date +%m`
+FN2=`date +%d`
+FN3=`date +%H`
+FN4=`date +%M`
+
+# www.airelive.com Web Server
+
+echo "[ $FN/$FN1/$FN2/$FN3/$FN4 ]"
+#echo "[sync qc to stage]"
+#/usr/bin/rsync -av --delete --exclude-from=/home/www/syncmaster_airelive/bin/exclude_sync.txt 10.6.0.128::se/DATA/airelive/uploader/ /DATA/airelive/uploader/
+#echo "[sync test to stage]"
+#/usr/bin/rsync -av --delete --exclude-from=/home/www/qc_syncmaster/bin/exclude_sync.txt 10.6.0.204::se/DATA/airelive/uploader/ /DATA/airelive/uploader/
+echo "[sync stage to live]"
+#/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.93::airelive/uploader/
+/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.94::airelive/uploader/
+#/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.14::airelive/uploader/
+#/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.15::airelive/uploader/
+#/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.16::airelive/uploader/
+#/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.17::airelive/uploader/
+#/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.18::airelive/uploader/
+#/usr/bin/rsync -av --delete /DATA/airelive/uploader/ 10.6.0.19::airelive/uploader/
+echo "-----------------------------------------------------------------------------"
+echo ""
+
+
+
+
+

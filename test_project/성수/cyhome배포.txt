@@ -1,0 +1,125 @@
+이 서버들은 뭐하는 서버들이지?
+
+http ------->    cyhome-web16: 10.42.100.216,  http (Active)
+         ssl ------->    cyhome-web16: 10.42.100.216,  ssl (Active)
+        http ------->    cyhome-web15: 10.42.100.215,  http (Active)
+         ssl ------->    cyhome-web15: 10.42.100.215,  ssl (Active)
+        http ------->    cyhome-web17: 10.42.100.217,  http (Active)
+         ssl ------->    cyhome-web17: 10.42.100.217,  ssl (Active)
+		 
+		 
+		 
+여기부터 cyhome 서버
+
+SSH@N_Cy_L4_M#show server bind | inc cyhome-web
+
+        http ------->    cyhome-web01: 10.42.100.191,  http (User Disabled)
+                         cyhome-web02: 10.42.100.192,  http (User Disabled)
+                         cyhome-web04: 10.42.100.194,  http (Active)
+                         cyhome-web05: 10.42.100.195,  http (Active)
+                         cyhome-web06: 10.42.100.196,  http (Active)
+                         cyhome-web07: 10.42.100.197,  http (Active)
+                         cyhome-web08: 10.42.100.198,  http (Active)
+                         cyhome-web09: 10.42.100.199,  http (Active)
+                         cyhome-web10: 10.42.100.200,  http (Active)
+                         cyhome-web11: 10.42.100.211,  http (Active)
+                         cyhome-web21: 10.42.100.91,  http (Active)
+                         cyhome-web22: 10.42.100.92,  http (Active)
+                         cyhome-web23: 10.42.100.93,  http (Active)
+                         cyhome-web24: 10.42.100.94,  http (Active)
+         ssl ------->    cyhome-web01: 10.42.100.191,  ssl (User Disabled)
+                         cyhome-web02: 10.42.100.192,  ssl (User Disabled)
+                         cyhome-web04: 10.42.100.194,  ssl (Active)
+                         cyhome-web05: 10.42.100.195,  ssl (Active)
+                         cyhome-web06: 10.42.100.196,  ssl (Active)
+                         cyhome-web07: 10.42.100.197,  ssl (Active)
+                         cyhome-web08: 10.42.100.198,  ssl (Active)
+                         cyhome-web09: 10.42.100.199,  ssl (Active)
+                         cyhome-web10: 10.42.100.200,  ssl (Active)
+                         cyhome-web11: 10.42.100.211,  ssl (Active)
+                         cyhome-web21: 10.42.100.91,  ssl (Active)
+                         cyhome-web22: 10.42.100.92,  ssl (Active)
+                         cyhome-web23: 10.42.100.93,  ssl (Active)
+                         cyhome-web24: 10.42.100.94,  ssl (Active)
+SSH@N_Cy_L4_M#
+
+
+
+
+L4에서 빼기
+config t
+server real 10.42.100.194
+dis
+server real 10.42.100.195
+dis
+server real 10.42.100.196
+dis
+server real 10.42.100.197
+dis
+server real 10.42.100.198
+dis
+server real 10.42.100.199
+dis
+end
+show server bind | inc cyhome-web
+
+배포 서버 접속
+
+
+
+
+L4에 넣기
+config t
+server real 10.42.100.194
+no dis
+server real 10.42.100.195
+no dis
+server real 10.42.100.196
+no dis
+server real 10.42.100.197
+no dis
+server real 10.42.100.198
+no dis
+server real 10.42.100.199
+no dis
+end
+show server bind | inc cyhome-web
+
+
+
+
+
+config t
+server real 10.42.100.200
+dis
+server real 10.42.100.211
+dis
+server real 10.42.100.91
+dis
+server real 10.42.100.92
+dis
+server real 10.42.100.93
+dis
+server real 10.42.100.94
+dis
+end
+show server bind | inc cyhome-web
+
+
+
+config t
+server real 10.42.100.200
+no dis
+server real 10.42.100.211
+no dis
+server real 10.42.100.91
+no dis
+server real 10.42.100.92
+no dis
+server real 10.42.100.93
+no dis
+server real 10.42.100.94
+no dis
+end
+show server bind | inc cyhome-web
+

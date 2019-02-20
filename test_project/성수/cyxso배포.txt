@@ -1,0 +1,64 @@
+http -------> ebo-auth01: 172.18.245.28,  http (User Disabled)
+                      ebo-auth02: 172.18.245.29,  http (Active)
+                      ebo-auth03: 172.18.245.30,  http (Active)
+                      ebo-auth04: 172.18.245.31,  http (Active)
+                      ebo-auth05: 172.18.245.32,  http (Active)
+         ssl -------> ebo-auth01: 172.18.245.28,  ssl (User Disabled)
+                      ebo-auth02: 172.18.245.29,  ssl (Active)
+                      ebo-auth03: 172.18.245.30,  ssl (Active)
+                      ebo-auth04: 172.18.245.31,  ssl (Active)
+                      ebo-auth05: 172.18.245.32,  ssl (Active)
+
+
+build Server : 192.168.249.158
+cyxso stage server : 172.18.245.28
+cyxso server : 172.18.245.29 ~ 32
+
+
+cd /root/deploy/
+./deploy.pl
+
+
+#file name : ROOT.war
+#pass phrase : cyworld
+
+
+##################### L4 setting ################# 설정되어 있는 모든 port 빼고 넣기
+
+config t
+server real 172.18.245.29
+dis
+server real 172.18.245.30
+dis
+end
+show server bind | inc auth
+
+
+
+config t
+server real 172.18.245.29
+no dis
+server real 172.18.245.30
+no dis
+end
+show server bind | inc auth
+
+
+
+config t
+server real 172.18.245.31
+dis
+server real 172.18.245.32
+dis
+end
+show server bind | inc auth
+
+
+
+config t
+server real 172.18.245.31
+no dis
+server real 172.18.245.32
+no dis
+end
+show server bind | inc auth

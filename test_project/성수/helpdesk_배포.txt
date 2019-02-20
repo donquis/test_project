@@ -1,0 +1,111 @@
+helpdesk build
+
+1. ssh 192.168.249.158 접속
+
+2. #build helpdesk yiseungju dltmdwn@42 live
+
+SSH@N_Cy_L4_M#show server bind | inc 211.115.11.206       
+Virtual server: cyhelp-web-237           Status: enabled  IP: 211.234.243.237
+SSH@N_Cy_L4_M#show server bind | inc cyhelp-web-237
+Virtual server: cyhelp-web-237           Status: enabled  IP: 211.234.243.237
+SSH@N_Cy_L4_M#show server bind cyhelp-web-237      
+
+Bind info
+
+Virtual server: cyhelp-web-237           Status: enabled  IP: 211.234.243.237
+                                         symmetric VIP state: Owner
+        http ------->    cyhelp-web01: 192.168.248.82,  http (Active)
+                         cyhelp-web02: 192.168.248.83,  http (Active)
+         ssl ------->    cyhelp-web01: 192.168.248.82,  ssl (Active)
+                         cyhelp-web02: 192.168.248.83,  ssl (Active)
+SSH@N_Cy_L4_M#show server bind cyhelp-web-237
+
+Bind info
+
+Virtual server: cyhelp-web-237           Status: enabled  IP: 211.234.243.237
+                                         symmetric VIP state: Owner
+        http ------->    cyhelp-web01: 192.168.248.82,  http (Active)
+                         cyhelp-web02: 192.168.248.83,  http (Active)
+         ssl ------->    cyhelp-web01: 192.168.248.82,  ssl (Active)
+                         cyhelp-web02: 192.168.248.83,  ssl (Active)
+
+
+
+
+
+						 
+						 
+						 
+						 
+1번 서버 (192.168.248.82)						 
+						 
+						 
+config t
+server real 192.168.248.82
+dis
+end
+show server bind cyhelp-web-237
+
+cd /cyworld/resin/webapps
+ls -al
+cp ROOT.war ROOT.war.20180118-1
+ls -al
+rsync -av 192.168.249.158::HELPDESK_DEPLOY/ROOT.war .
+ls -al
+cp ROOT.war app1/
+cp ROOT.war app2/
+cd app1/
+r1stop
+ps -ef | grep resin
+r2stop
+ps -ef | grep resin
+r1start
+ps -ef | grep resin
+r2start
+ps -ef | grep resin | wc -l
+
+
+config t
+server real 192.168.248.82
+no dis
+end
+show server bind cyhelp-web-237
+
+
+
+
+
+
+2번 서버 (192.168.248.83)
+
+config t
+server real 192.168.248.83
+dis
+end
+show server bind cyhelp-web-237
+
+
+cd /cyworld/resin/webapps
+ls -al
+cp ROOT.war ROOT.war.20180118
+ls -al
+rsync -av 192.168.249.158::HELPDESK_DEPLOY/ROOT.war .
+ls -al
+cp ROOT.war app1/
+cp ROOT.war app2/
+cd app1/
+r1stop
+ps -ef | grep resin
+r2stop
+ps -ef | grep resin
+r1start
+ps -ef | grep resin
+r2start
+ps -ef | grep resin | wc -l
+
+
+config t
+server real 192.168.248.83
+no dis
+end
+show server bind cyhelp-web-237

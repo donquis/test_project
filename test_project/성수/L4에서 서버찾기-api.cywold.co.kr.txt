@@ -1,0 +1,113 @@
+########## L4 설정 port만 빼기 - api.cyworld.co.kr ##########################
+
+SSH@N_Cy_L4_M#show server bind | inc 243.233
+Virtual server: cyneo-api-233            Status: enabled  IP: 211.234.243.233
+SSH@N_Cy_L4_M#show server bind cyneo-api-233
+
+Bind info
+
+Virtual server: cyneo-api-233            Status: enabled  IP: 211.234.243.233
+                                         symmetric VIP state: Owner
+        http ------->    cyrenoapi-pub01: 10.42.100.141,  http (User Disabled)
+                         cyrenoapi-pub02: 10.42.100.142,  http (User Disabled)
+                         cyrenoapi-pub03: 10.42.100.143,  http (User Disabled)
+                         cyrenoapi-pub04: 10.42.100.144,  http (User Disabled)
+                         cyrenoapi-pub05: 10.42.100.145,  http (User Disabled)
+                         cyrenoapi-pub06: 10.42.100.146,  http (User Disabled)
+                         cyrenoapi-pub07: 10.42.100.147,  http (User Disabled)
+                         cyrenoapi-pub08: 10.42.100.148,  http (User Disabled)
+                         cyrenoapi-pub09: 10.42.100.149,  http (User Disabled)
+                         cyrenoapi-pub10: 10.42.100.150,  http (User Disabled)
+                         cyrenoapi-pub11: 10.42.100.151,  http (User Disabled)
+                         cyrenoapi-pub12: 10.42.100.152,  http (User Disabled)
+                         cyrenoapi-pub13: 10.42.100.153,  http (User Disabled)
+                         cyrenoapi-pub14: 10.42.100.154,  http (User Disabled)
+                         cyrenoapi-pub15: 10.42.100.155,  http (User Disabled)
+                         cyrenoapi-pub16: 10.42.100.156,  http (User Disabled)
+                         cyrenoapi-pub17: 10.42.100.157,  http (User Disabled)
+         ssl ------->    cyrenoapi-pub01: 10.42.100.141,  ssl (Active)
+                         cyrenoapi-pub02: 10.42.100.142,  ssl (Active)
+                         cyrenoapi-pub03: 10.42.100.143,  ssl (Active)
+                         cyrenoapi-pub04: 10.42.100.144,  ssl (Active)
+                         cyrenoapi-pub05: 10.42.100.145,  ssl (User Disabled)
+                         cyrenoapi-pub06: 10.42.100.146,  ssl (User Disabled)
+                         cyrenoapi-pub07: 10.42.100.147,  ssl (User Disabled)
+                         cyrenoapi-pub08: 10.42.100.148,  ssl (User Disabled)
+                         cyrenoapi-pub09: 10.42.100.149,  ssl (User Disabled)
+                         cyrenoapi-pub10: 10.42.100.150,  ssl (User Disabled)
+                         cyrenoapi-pub11: 10.42.100.151,  ssl (Active)
+                         cyrenoapi-pub12: 10.42.100.152,  ssl (Active)
+                         cyrenoapi-pub13: 10.42.100.153,  ssl (User Disabled)
+                         cyrenoapi-pub14: 10.42.100.154,  ssl (Active)
+                         cyrenoapi-pub15: 10.42.100.155,  ssl (Active)
+                         cyrenoapi-pub16: 10.42.100.156,  ssl (Active)
+                         cyrenoapi-pub17: 10.42.100.157,  ssl (Active)
+
+
+
+
+port만 다운
+
+config t
+server real 10.42.100.141
+port ssl dis
+server real 10.42.100.142
+port ssl dis
+server real 10.42.100.143
+port ssl dis
+server real 10.42.100.144
+port ssl dis
+server real 10.42.100.151
+port ssl dis
+end
+show server bind 211.234.243.233
+
+
+
+config t
+server real 10.42.100.141
+no port ssl dis
+server real 10.42.100.142
+no port ssl dis
+server real 10.42.100.143
+no port ssl dis
+server real 10.42.100.144
+no port ssl dis
+server real 10.42.100.151
+no port ssl dis
+end
+show server bind 211.234.243.233
+
+
+
+
+
+config t
+server real 10.42.100.152
+port ssl dis
+server real 10.42.100.154
+port ssl dis
+server real 10.42.100.155
+port ssl dis
+server real 10.42.100.156
+port ssl dis
+server real 10.42.100.157
+port ssl dis
+end
+show server bind 211.234.243.233
+
+
+
+config t
+server real 10.42.100.152
+no port ssl dis
+server real 10.42.100.154
+no port ssl dis
+server real 10.42.100.155
+no port ssl dis
+server real 10.42.100.156
+no port ssl dis
+server real 10.42.100.157
+no port ssl dis
+end
+show server bind 211.234.243.233
